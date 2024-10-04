@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content=" width = device - width, initial - scale = 1.0">
+        <title>Homepage</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <body>
+        <div class="container">
+            <div>
+                <label>First Number</label>
+                <input type="number" name="first-number" class="form-control numbers" id="num1" >
+            </div>
+            <div>
+                <label>Second Number</label>
+                <input type="number" name="second-number" class="form-control numbers" id="num2" >
+            </div>
+            <div>
+                <label>Answer: </label><span id="answer"></span>
+            </div>
+            <div>
+                <button type="Add" name="ad" id="add-number" onclick="addNumber()" class="form-control btn-primary btn">Add Number</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        document.getElementById("num1").style.backgroundColor = "beige";
+        document.getElementById("num2").style.backgroundColor = "beige";
+        
+        //num3 = parseInt(num1) + parseInt(num2);
+        function addNumber (){
+            var num1 = 0, num2 = 0, num3 = 0;
+            num1 = document.getElementById("num1").value;
+            num2 = document.getElementById("num2").value;
+            num3 = parseInt(num1) + parseInt(num2);
+            document.getElementById("answer").textContent = num3;
+            determineGreater(num1, num2);
+        }
+        function determineGreater(value1, value2){
+            if (value1 >= value2) {
+                console.log("the greater number is "+ value1)
+            } else {
+                console.log("the greater number is "+ value2)
+            }
+        }
+        /*console.log("Sum of "+ num1 + " & " + num2 + " is " + num3);*/
+    </script> 
+</html>
